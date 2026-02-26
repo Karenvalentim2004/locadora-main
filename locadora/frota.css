@@ -1,0 +1,16 @@
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #e0a800;
+    margin: 0;
+    padding: 20px;
+}
+
+.btn-salvar{
+    background-color: #ffc107;
+    color: white;
+}
+
+.btn-salvar:hover{
+    background-color: #e0a800;
+    color: white;
+}

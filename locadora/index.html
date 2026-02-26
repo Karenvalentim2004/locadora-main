@@ -16,16 +16,16 @@
             <p class="texto">Preencha as informações abaixo</p>
             <form class="pedido">
                 <label class="rotulo">Nome</label>
-                <input type="text" class="campo-texto">
+                <input type="text" class="campo-texto" id="nome">
                 <label class="rotulo">E-mail</label>
-                <input type="text" class="campo-texto">
+                <input type="text" class="campo-texto" id="email">
                 <label class="rotulo">Selecione o tipo de veículo</label>
-                <select class="campo-texto">
+                <select class="campo-texto" id="veiculo">
                     <option>Básico</option>
                     <option>Família</option>
                     <option>Luxo</option>
                 </select>
-                <button class="botao-reservar">FAZER MINHA RESERVA</button>
+                <button class="botao-reservar" onclick="fnReservarVeiculo()">FAZER MINHA RESERVA</button>
             </form>
         </div>
         <div id="col2">
@@ -34,6 +34,10 @@
             <img src="imagens/renault-kwid.png" alt="Renault Kwid">
         </div>
     </main>
+
+    <script src="app-reserva.js"></script>
+
+
 </body>
 
 </html>
