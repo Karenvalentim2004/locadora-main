@@ -29,3 +29,37 @@ conexao.connect(function (erro) {
         console.log("Conexão deu bom \n")
     }
 })
+
+//Reservas
+app.post("/agendamentos/", function (req, res) {
+    const data = req.body
+
+    console.dir(data)
+    conexao.query(`INSERT INTO agendamentos SET ?`, data, function (erro, resultado) {
+
+        if (erro) {
+            console.log("Erro", erro);
+            return res.status(400).json(erro); 
+        }
+        res.send({ id: resultado.insertId });
+    });
+});
+
+
+//Veículos
+app.post("/veiculos/", function (req, res) {
+    const data = req.body
+
+    console.dir(data)
+    conexao.query(`INSERT INTO veiculos SET ?`, data, function (erro, resultado) {
+
+        if (erro) {
+            console.log("Erro", erro);
+            return res.status(400).json(erro); 
+        }
+        res.send({ id: resultado.insertId });
+    });
+});
+
+
+app.listen(3000)

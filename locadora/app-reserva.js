@@ -1,13 +1,13 @@
 function fnReservarVeiculo() {
 
     let formDados = {
-        nome: document.getElementById('nome').value,
-        email: document.getElementById('email').value,
-        veiculo: document.getElementById('veiculo').value
+        nome_cliente: document.getElementById('nome').value,
+        email_cliente: document.getElementById('email').value,
+        categoria: document.getElementById('veiculo').value
     }
     console.dir(formDados)
 
-    fetch('http://localhost:8080/agendamentos', {
+    fetch('http://localhost:3000/agendamentos/', {
         method: 'POST',
         headers: {  
             'Content-Type': 'application/json'
@@ -21,8 +21,10 @@ function fnReservarVeiculo() {
             alert("Erro ao realizar a reserva.");
         }
     })
-    .catch(error => {
-        console.error('Erro:', error);
-        alert("Erro ao realizar a reserva.");
-    });
-}
+} 
+
+let btn_salvar = document.getElementById("btn-salvar-reserva")
+
+btn_salvar.addEventListener("click", function () {
+    fnReservarVeiculo()
+})
