@@ -7,13 +7,13 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>Rent a Car - Operador</title>
+    <title>Rent a Car - Operador Veiculos</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="style-admin.css">
+    <!-- <link rel="stylesheet" href="style-admin.css"> -->
 </head>
 
 <body>
@@ -39,15 +39,15 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">
+                            <a class="nav-link active" aria-current="page" href="operador.html">
                                 <span data-feather="home"></span>
-                                Veiículos
+                                Veiculos
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="reservas.html">
                                 <span data-feather="file"></span>
-                                Usuários
+                                Reservas
                             </a>
                         </li>
 
@@ -59,13 +59,14 @@
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Veículos</h1>
-
+                    <a href="frota.html" type="button" class="btn btn-outline-info">Cadastrar Veiculos</a>
                 </div>
 
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
+                                <th scope="col">ID</th>
                                 <th scope="col">MODELO</th>
                                 <th scope="col">MARCA</th>
                                 <th scope="col">PLACA</th>
@@ -73,8 +74,8 @@
                             </tr>
                         </thead>
 
-                        <tbody id="lista-produtos">
-                            
+                        <tbody id="lista-veiculos">
+
                         </tbody>
 
                     </table>
@@ -83,13 +84,9 @@
         </div>
     </div>
 
-    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
 
     <script src="app-operador.js"></script>
-    <script src="app-operador-excluir.js"></script>
-    
+
 </body>
 
 </html>
