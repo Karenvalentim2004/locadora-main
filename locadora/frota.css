@@ -5,16 +5,16 @@ body {
 
 .titulo {
     text-align: center;
-    margin-top: 20px;
-    color: black;
+    margin-top: 50px;
+    color: white;
 }
 
-.btn-salvar{
+.btn-salvar {
     background-color: #ffc107;
     color: white;
 }
 
-.btn-salvar:hover{
+.btn-salvar:hover {
     background-color: #e0a800;
     color: white;
 }

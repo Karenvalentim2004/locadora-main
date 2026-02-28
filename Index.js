@@ -18,7 +18,7 @@ let conexao = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "bd_rentacar"
+    database: "bd_rentacar2"
 })
 
 conexao.connect(function (erro) {
@@ -45,6 +45,24 @@ app.post("/agendamentos/", function (req, res) {
     });
 });
 
+app.get("/agendamentos/", function (req, res) {
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    conexao.query("SELECT * FROM bd_rentacar2.agendamentos", function (erro, lista_agendamento, campos) {
+        res.send(lista_agendamento)
+    });
+});
+
+app.delete("/agendamentos/:id", function (req, res) {
+    const id = req.params.id
+
+    conexao.query(`delete from agendamentos where id= ${id}`, function (erro, resultado) {
+        if (erro) {
+            res.send(erro)
+        }
+        res.send({"status":200, "message": "Excluído com sucesso!"})
+    })
+})
+
 
 //Veículos
 app.post("/veiculos/", function (req, res) {
@@ -60,6 +78,14 @@ app.post("/veiculos/", function (req, res) {
         res.send({ id: resultado.insertId });
     });
 });
+
+
+app.get("/veiculos/", function (req, res) {
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    conexao.query("SELECT * FROM bd_rentacar2.veiculos", function (erro, lista_veiculos, campos) {
+        res.send(lista_veiculos)
+    });
+}); 
 
 
 app.listen(3000)

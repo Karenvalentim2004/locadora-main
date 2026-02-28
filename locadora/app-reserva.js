@@ -23,8 +23,10 @@ function fnReservarVeiculo() {
     })
 } 
 
-let btn_salvar = document.getElementById("btn-salvar-reserva")
+let form = document.getElementById("form-reserva");
 
-btn_salvar.addEventListener("click", function () {
-    fnReservarVeiculo()
-})
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    fnReservarVeiculo();
+});
