@@ -113,6 +113,16 @@ body{
 #col2{
     width: 700px;   
     margin-left: 39px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#col2 img{
+    width: 700px;
+    height: 400px;
+    object-fit: contain;
+    margin-top: 20px;
 }
 
 .oferta{

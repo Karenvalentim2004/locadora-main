@@ -18,3 +18,25 @@ body {
     background-color: #e0a800;
     color: white;
 }
+
+.btn-voltar {
+    margin-top: 20px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    color: #ffc107;
+}
+
+.btn-voltar:hover {
+    background-color: white;
+    color: #ffc107;
+}
+
+.icone {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}

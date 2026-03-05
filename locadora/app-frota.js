@@ -1,3 +1,7 @@
+function fnLimparCampos() {
+    document.getElementById("form-produtos").reset()
+}
+
 function fnCadastrarVeiculo() {
     let formDados = {
         modelo: document.getElementById('modelo').value,
@@ -15,6 +19,7 @@ function fnCadastrarVeiculo() {
         body: JSON.stringify(formDados)
     })
     .then(response => {
+        fnLimparCampos()
         if (response.ok) {
             alert("Veículo cadastrado com sucesso!");
         } else {

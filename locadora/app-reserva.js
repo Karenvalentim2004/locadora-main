@@ -1,3 +1,35 @@
+const veiculo = document.getElementById("veiculo")
+const preco = document.getElementById("preco")
+const imagem = document.getElementById("imagem-veiculo")
+
+veiculo.addEventListener("change", function () {
+
+    const tipo = veiculo.value
+
+    if (tipo === "Básico") {
+        preco.innerText = "99,00"
+        imagem.src = "imagens/renault-kwid.png"
+    }
+
+    if (tipo === "Família") {
+        preco.innerText = "250,00"
+        imagem.src = "imagens/virtus.png"
+    }
+
+    if (tipo === "Luxo") {
+        preco.innerText = "1.000,00"
+        imagem.src = "imagens/9112.png"
+    }
+
+})
+
+
+
+
+function fnLimparCampos() {
+    document.getElementById("form-reserva").reset()
+}
+
 function fnReservarVeiculo() {
 
     let formDados = {
@@ -9,19 +41,20 @@ function fnReservarVeiculo() {
 
     fetch('http://localhost:3000/agendamentos/', {
         method: 'POST',
-        headers: {  
+        headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(formDados)
     })
-    .then(response => {
-        if (response.ok) {
-            alert("Reserva realizada com sucesso!");
-        } else {
-            alert("Erro ao realizar a reserva.");
-        }
-    })
-} 
+        .then(response => {
+            fnLimparCampos()
+            if (response.ok) {
+                alert("Reserva realizada com sucesso!");
+            } else {
+                alert("Erro ao realizar a reserva.");
+            }
+        })
+}
 
 let form = document.getElementById("form-reserva");
 
